@@ -4,8 +4,6 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import "@styles/root.less";
 import "@styles/dark.less";
-import "@styles/critical.less";
-import "@styles/local.less";
 
 const {description, title, preloadImg = ""} = Astro.props;
 ---
@@ -45,12 +43,10 @@ const {description, title, preloadImg = ""} = Astro.props;
             { (preloadImg) !== "" &&
                 <link rel="preload" as="image" href={preloadImg} />
             }
-            
+    
             <!-- Sitewide Scripts -->
             <script defer src="/assets/js/nav.js"></script>
             <script defer src="/assets/js/dark.js"></script>
-            <script src="/assets/zf.js" defer></script>
-           
    
             {Astro.url.pathname === "/" &&
             <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
